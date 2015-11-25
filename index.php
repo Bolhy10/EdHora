@@ -6,8 +6,11 @@
  * Time: 23:17
  */
 require_once ('server/conexion.php');
-if(isset($_SESSION['usuario']) == true){
-    header('Location: inicio');
+if(isset($_SESSION['estudiante']) == true && isset($_SESSION["rol_e"]) == true){
+    header('Location: inicio-estudiante');
+}
+if(isset($_SESSION['profesor']) == true && isset($_SESSION["rol_p"]) == true) {
+    header('Location: inicio-profesor');
 }
 ?>
 <html>
@@ -23,7 +26,6 @@ if(isset($_SESSION['usuario']) == true){
     <!-- Javascript-->
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/alphabet.js"></script>
-
 </head>
 <body>
 <?php

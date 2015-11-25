@@ -8,19 +8,27 @@ $(document).ready(function () {
         $.ajax({
             type:'POST',
             url:'server/service.php',
+            data:{
+                usuario:usuario,
+                password:password,
+                accion:'login'
+            },
             success: function (data) {
-                if (data == 1) {
-                    $('.error').html('<div class="alert alert-info" role="alert">Estamos creando su cuenta. Espere un momento <img src="images/ajax-loader.gif"></div>');
+                if (data == 2) {
+                    $('.error').html('<div class="alert alert-info" role="alert">Estamos ingresando a su cuenta. Espere un momento <img src="images/ajax-loader.gif"></div>');
                     setTimeout(function () {
-                        window.location = 'inicio';
+                        window.location = 'inicio-estudiante';
                     }, 3000);
-                } else {
+                }else if(data == 1){
+                    $('.error').html('<div class="alert alert-info" role="alert">Estamos ingresando a su cuenta. Espere un momento <img src="images/ajax-loader.gif"></div>');
+                    setTimeout(function () {
+                        window.location = 'inicio-profesor';
+                    }, 3000);
+                }else {
                     $('.error').html('<div class="alert alert-info" role="alert">Error en el proceso. Intentelo Nuevamente.</div>');
                 }
             }
             });
     });
-
-
 
 });

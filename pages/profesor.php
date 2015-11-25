@@ -2,17 +2,17 @@
 /**
  * Created by PhpStorm.
  * User: Bolhy
- * Date: 24/11/2015
- * Time: 23:17
+ * Date: 25/11/2015
+ * Time: 16:10
  */
 require_once ('../server/conexion.php');
-if(isset($_SESSION['estudiante']) == false && isset($_SESSION["rol_e"]) == true){
+if(isset($_SESSION['profesor']) == false && isset($_SESSION["rol_p"]) == false){
     header('Location: edhoraPanama');
 }
 ?>
 <html>
 <head>
-    <title>EdHora - <?php echo $usuario; ?></title>
+    <title>EdHora - Educadores</title>
     <link href="" rel="icon" type="image/x-icon" />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -27,10 +27,12 @@ if(isset($_SESSION['estudiante']) == false && isset($_SESSION["rol_e"]) == true)
 include ("../tools/header.php");
 ?>
 
+
+
+
+
 </div>
 <script type="text/javascript" src="js/edhora-js.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 </body>
 </html>
-
-

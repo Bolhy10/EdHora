@@ -1,5 +1,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine on
-RewriteRule ^inicio$ pages/estudiantes.php [L]
+RewriteRule ^inicio-estudiante$ pages/estudiantes.php [L]
+RewriteRule ^inicio-profesor$ pages/profesor.php [L]
+
 RewriteRule ^edhoraPanama$ index.php [L]
 </IfModule>

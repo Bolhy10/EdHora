@@ -13,7 +13,7 @@
 
             <form class="navbar-form navbar-right">
                 <?php
-                if(isset($_SESSION['usuario']) == false){
+                if(isset($usuario) == false){
                     ?>
                 <div class="form-group">
                     <input type="text" id="usuario" placeholder="Usuario" class="form-control">
@@ -21,19 +21,24 @@
                 <div class="form-group">
                     <input type="password" id="password" placeholder="Contrase&ntilde;a" class="form-control">
                 </div>
-                <button type="submit" class="btn btn-success" id="login">Ingresar</button>
+                <button type="button" class="btn btn-success" id="login">Ingresar</button>
                 <?php
-                }else {
+                }else{
                     ?>
-                    <div class="form-group">
-                        <div><li class="tou"><a href="#" class="perfil-user"><img src="<?php print $perfil; ?>"/></a>
-                                <ul class="children">
-                                    <li><a href="profile">Ver mi perfil</a></li>
-                                    <li><a href="account">Configuracion de la cuenta</a></li>
-                                    <li><a href="log_out">Log out</a></li>
-                                </ul>
-                            </li></div>
-                    </div>
+                            <ul class="nav nav-pills">
+                                <li role="presentation" class="dropdown">
+                                    <div class="images-user"><img src="<?php echo $perfil; ?>"></div>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $nombre.' '.$apellido; ?> <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Mi Perfil</a></li>
+                                        <li><a href="#">Horario</a></li>
+                                        <li><a href="#">Estudiantes</a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a href="#">Cerrar Sesi&oacute;n</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                     <?php
                 }
                 ?>
