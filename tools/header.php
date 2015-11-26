@@ -37,7 +37,7 @@
                                     <li><a href="perfil-profesor">Mi Perfil</a></li>
                                     <li><a href="ver-estudiantes">Estudiantes</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Cerrar Sesi&oacute;n</a></li>
+                                    <li><a href="cerrar-sesion">Cerrar Sesi&oacute;n</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -55,7 +55,7 @@
                                     <li><a href="perfil-estudiante">Mi Perfil</a></li>
                                     <li><a href="ver-materias">Materias</a></li>
                                     <li role="separator" class="divider"></li>
-                                    <li><a href="#">Cerrar Sesi&oacute;n</a></li>
+                                    <li><a href="cerrar-sesion">Cerrar Sesi&oacute;n</a></li>
                                 </ul>
                             </li>
                         </ul>

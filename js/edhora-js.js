@@ -142,6 +142,23 @@ $(document).ready(function () {
 
         });
     });
+    
+    $('#materia').change(function () {
+        var materia = document.getElementById('materia').value;
+        $.ajax({
+            type:'POST',
+            url:'server/service.php',
+            data:{
+                materia:materia,
+                accion:'mate'
+            },
+            success: function (data) {
+                $('.tareitas').html(data).show();
+            }
+        })
+        
+        
+    });
 
 
 });

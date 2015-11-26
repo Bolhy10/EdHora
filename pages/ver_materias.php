@@ -6,7 +6,7 @@
  * Time: 16:10
  */
 require_once ('../server/conexion.php');
-if(isset($_SESSION['estudiante']) == false && isset($_SESSION["rol_e"]) == false){
+if(isset($_SESSION['estudiante']) == true && isset($_SESSION["rol_e"]) == true){
     header('Location: edhoraPanama');
 }
 ?>

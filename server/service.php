@@ -78,8 +78,22 @@ switch($_POST["accion"]){
                             </div>
                         </div>
                     </div>';
+        }
+        break;
 
+    case 'mate':
 
+        $materia = $_POST["materia"];
+        $m = "SELECT * FROM tareas INNER JOIN cursos ON (cursos.id_curso = tareas.id_curso) INNER JOIN salon ON (salon.ID = tareas.id_salon) WHERE tareas.id_curso = '$materia' AND tareas.id_salon = '$id_salon'";
+        $v = $con -> query($m);
+        while($o = $v -> fetch_array()){
+            echo '
+                <div class="tareas">
+                    <h4>'.$o["nombre_tarea"].' - Sal&oacute;n '.$o["salon"].'</h4>
+                    <article>'.$o["descripcion"].'</article>
+                    <span>De:' .$o["fecha_inicio"].' - Hasta: '.$o["fecha_entrega"].'</span>
+                </div>
+            ';
         }
         break;
 

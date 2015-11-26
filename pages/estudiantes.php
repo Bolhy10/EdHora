@@ -6,7 +6,7 @@
  * Time: 23:17
  */
 require_once ('../server/conexion.php');
-if(isset($_SESSION['estudiante']) == false && isset($_SESSION["rol_e"]) == true){
+if(isset($_SESSION['estudiante']) == true && isset($_SESSION["rol_e"]) == true){
     header('Location: edhoraPanama');
 }
 ?>
@@ -26,7 +26,46 @@ if(isset($_SESSION['estudiante']) == false && isset($_SESSION["rol_e"]) == true)
 <?php
 include ("../tools/header.php");
 ?>
+<div class="jumbotron">
+    <div class="container">
+        <div class="error"></div>
+        <h2>Tareas Asignadas para <?php echo $nombre.' '.$apellido; ?></h2>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group">
+                    <label for="salon">Buscar Materia: </label>
+                    <select name="materia" id="materia" class="form-control">
+                        <option value="">Buscar materia</option>
+                        <?php
+                        $s = "SELECT * FROM cursos";
+                        $salon  = $con -> query($s);
+                        while($q = $salon -> fetch_array()){
+                            ?>
+                            <option value="<?php echo $q["id_curso"];?>"><?php echo utf8_encode($q["curso"]);?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="tareitas">
+                </div>
+            </div>
 
+            <div class="col-lg-6">
+                <div class="imagen">
+                    <img src="images/logito.png"/>
+                </div>
+            </div>
+        </div>
+     </div>
+    </div>
+
+
+<div class="container">
+    <hr>
+    <footer>
+        <p>Derecho de Autor <i class="fa fa-copyright fa"></i> CompilerSoft 2015, Inc.</p>
+    </footer>
 </div>
 <script type="text/javascript" src="js/edhora-js.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>

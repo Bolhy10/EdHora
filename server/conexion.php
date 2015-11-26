@@ -21,7 +21,7 @@ if ($con -> connect_errno) {
 
     if(isset($_SESSION["estudiante"]) == true && isset($_SESSION["rol_e"]) == true){
         $usuario = $_SESSION["estudiante"];
-        $adm = "SELECT * FROM estudiante WHERE usuario = '$usuario' ";
+        $adm = "SELECT * FROM estudiante INNER JOIN salon ON (salon.ID = estudiante.id_salon) WHERE usuario = '$usuario' ";
         $aquery = $con -> query($adm);
         while($r = $aquery -> fetch_array()){
             $usuario = $r["usuario"];
@@ -30,9 +30,10 @@ if ($con -> connect_errno) {
             $apellido = $r["Ape_estudiante"];
             $cedula = $r["cedula"];
             $perfil  = $r["perfil"];
+            $salon = $r["salon"];
+            $id_salon = $r["ID"];
         }
     }
-
     if(isset($_SESSION["profesor"]) == true && isset($_SESSION["rol_p"]) == true){
         $adm = "SELECT * FROM profesor INNER JOIN cursos ON (cursos.id_curso = profesor.id_curso) WHERE 1";
         $aquery = $con -> query($adm);
