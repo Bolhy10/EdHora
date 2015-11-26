@@ -19,6 +19,7 @@ if(isset($_SESSION['profesor']) == false && isset($_SESSION["rol_p"]) == false){
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Css Script -->
     <link type="text/css" href="css/stylesheet.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
     <link type="text/css" href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Javascript-->
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
@@ -85,7 +86,7 @@ include ("../tools/header.php");
 <div class="container">
     <hr>
     <footer>
-        <p>Derecho de Autor &copy; CompilerSoft 2015, Inc.</p>
+        <p>Derecho de Autor <i class="fa fa-copyright fa"></i> CompilerSoft 2015, Inc.</p>
     </footer>
 </div>
 <script type="text/javascript" src="js/edhora-js.js"></script>

@@ -81,8 +81,6 @@ switch($_POST["accion"]){
 
 
         }
-
-
         break;
 
 

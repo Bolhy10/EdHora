@@ -26,6 +26,7 @@ if(isset($_SESSION['profesor']) == true && isset($_SESSION["rol_p"]) == true) {
     <!-- Javascript-->
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <script type="text/javascript" src="http://s3.amazonaws.com/codecademy-content/courses/hour-of-code/js/alphabet.js"></script>
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
 </head>
 <body>
 <?php
@@ -46,6 +47,39 @@ include ("tools/header.php");
             </div>
 
             <div class="col-lg-6">
+                <h1>Registrarse</h1>
+                <form id="registrarse" enctype="multipart/form-data" method="post">
+                    <div class="form-group">
+                        <label for="usuario">Usuario: </label>
+                        <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Introduzca un nombre de usuario...">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo Electr&oacute;nico: </label>
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Introduzca su correo electr&oacute;nico...">
+                    </div>
+                    <div class="form-group">
+                        <label for="cedula">C&eacutedula: </label>
+                        <input type="text" class="form-control" id="cedula" name="cedula" placeholder="Introduzca su identificaci&aacute;n personal...">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Contrase&ntilde;a: </label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Introduzca una contrase&ntilde;a...">
+                    </div>
+                    <div class="form-group">
+                        <label for="salon">Sal&oacute;n: </label>
+                        <select name="salon" id="salon" class="form-control">
+                            <?php
+                            $s = "SELECT * FROM salon";
+                            $salon  = $con -> query($s);
+                            while($q = $salon -> fetch_array()){
+                                ?>
+                                <option value="<?php echo $q["ID"];?>"><?php echo $q["salon"];?></option>
+                                <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <button class="btn btn-success" type="button" id="registrar">Registrase</button>
             </div>
 
         </div>
@@ -57,28 +91,24 @@ include ("tools/header.php");
     <!-- Example row of columns -->
     <div class="row">
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2 class="text-center"><i class="fa fa-4x fa-laptop"></i></h2>
+            <p class="text-center">Coloca todas tus tareas, atraves de la plataforma, sin necesidad de tener documentos.</p>
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2 class="text-center"><i class="fa fa-4x fa-sticky-note-o"></i></h2>
+            <p class="text-center">Lleva un conteo, de tus tareas asignadas. Asi dejas el poco de papeles que posees.</p>
         </div>
         <div class="col-md-4">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            <h2 class="text-center"><i class="fa fa-eye fa-4x"></i></h2>
+            <p class="text-center">Revisa el listado de los estudiantes, la cual estas dando clases.</p>
         </div>
     </div>
     <hr>
     <footer>
-        <p>Derecho de Autor &copy; CompilerSoft 2015, Inc.</p>
+        <p>Derecho de Autor <i class="fa fa-copyright fa"></i> CompilerSoft 2015, Inc.</p>
     </footer>
 </div> <!-- /container -->
 <script type="text/javascript" src="js/edhora-js.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-
 </body>
 </html>
