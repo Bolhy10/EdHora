@@ -8,7 +8,7 @@
 
 //$con = new ezSQL_mysql('root','','whereis','localhost');
 $hostname = 'localhost';
-$database = 'edhora';
+$database = 'Educativa';
 $username = 'root';
 $password = '';
 //MySQLi
@@ -30,8 +30,10 @@ if ($con -> connect_errno) {
             $cedula = $r["cedula"];
             $perfil  = $r["perfil"];
         }
-    }else{
-        $adm = "SELECT * FROM profesor";
+    }
+
+    if(isset($_SESSION["profesor"]) == true && isset($_SESSION["rol_p"]) == true){
+        $adm = "SELECT * FROM profesor INNER JOIN cursos ON (cursos.id_curso = profesor.id_curso) WHERE 1";
         $aquery = $con -> query($adm);
         while($r = $aquery -> fetch_array()){
             $usuario = $r["usuario"];
@@ -40,6 +42,8 @@ if ($con -> connect_errno) {
             $apellido = $r["Apellido"];
             $cedula = $r["cedula"];
             $perfil  = $r["perfil"];
+            $curso = $r["curso"];
+            $id_curso = $r["id_curso"];
         }
     }
 }

@@ -38,5 +38,26 @@ switch($_POST["accion"]){
           }
         break;
 
+    case 'tareas':
+
+        $nombre = $_POST["nombre"];
+        $salon = $_POST["salon"];
+        $descripcion = $_POST["descripcion"];
+        $fecha_e = $_POST["fecha_e"];
+        $fecha_i = date('d-m-Y');
+        $insertar = "INSERT INTO tareas (id_curso,nombre_tarea,descripcion,id_salon,fecha_entrega,fecha_inicio)
+                     VALUES ('$id_curso','$nombre','$descripcion','$salon','$fecha_e','$fecha_i')";
+        $query = $con -> query($insertar);
+        if($query){
+            echo 1;
+        }else{
+            echo 2;
+        }
+
+
+
+
+        break;
+
 
 }
