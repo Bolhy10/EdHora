@@ -79,8 +79,49 @@ $(document).ready(function () {
               $('.tareitas').html(data).show();
             }
         })
+    });
 
+    $('#file_photo').on('change', function () {
+        $('#img-user').html(' ');
+        var archivos = document.getElementById('file_photo').files;
+        var navegador = window.URL || window.webkitURL;
+        for(var x=0; x<archivos.length;x++){
 
+            var size  = archivos[x].size;
+            var type = archivos[x].type;
+            var name = archivos[x].name;
+            var width = archivos[x].width;
+            var height = archivos[x].height;
+
+            if(size > 1024*1024){
+                $('.llo').append("El archivo "+name+" supera el maximo permitido");
+            }else if(type != 'image/jpg' && type != 'image/png' && type != 'image/jpeg'){
+                $('.llo').append("El archivo "+name+" no es tipo de imagen permitida.");
+            }else if(width > 1000 || height > 1000){
+                $(archivos[x]).hide();
+            }else{
+                var objeto_url = navegador.createObjectURL(archivos[x]);
+                $("#img-user").html("<img src="+objeto_url+" width='100%' height='350px' />");
+            }
+        }
+    });
+    $('#info-profesor').click(function () {
+        var formData = new FormData($('#account-profesor')[0]);
+        var ruta = 'server/account_server.php';
+        $.ajax({
+            type:'POST',
+            url:ruta,
+            data: formData,
+            contentType: false,
+            processData:false,
+            success: function (data) {
+                    $('.error').html(data).show().delay(2000).hide(200);
+                setTimeout(function () {
+                    location.reload(true);
+                },2000);
+            }
+
+        });
     });
 
 });

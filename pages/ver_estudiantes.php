@@ -57,21 +57,9 @@ include ("../tools/header.php");
                     <img src="images/logito.png"/>
                 </div>
             </div>
-
         </div>
-
-
-
-
-
-
-
     </div>
     </div>
-
-
-
-
     <div class="container">
         <hr>
         <footer>
