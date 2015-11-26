@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2015 a las 08:54:05
+-- Tiempo de generación: 26-11-2015 a las 18:50:10
 -- Versión del servidor: 10.0.17-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -60,7 +60,7 @@ CREATE TABLE `estudiante` (
   `Id` int(100) NOT NULL,
   `cedula` varchar(12) NOT NULL,
   `Nom_estudiante` varchar(60) NOT NULL,
-  `Ape_Estudiante` varchar(60) NOT NULL,
+  `Ape_estudiante` varchar(60) NOT NULL,
   `fechanacimiento` varchar(20) NOT NULL,
   `id_salon` varchar(10) NOT NULL,
   `usuario` varchar(60) NOT NULL,
@@ -74,7 +74,7 @@ CREATE TABLE `estudiante` (
 -- Volcado de datos para la tabla `estudiante`
 --
 
-INSERT INTO `estudiante` (`Id`, `cedula`, `Nom_estudiante`, `Ape_Estudiante`, `fechanacimiento`, `id_salon`, `usuario`, `password`, `email`, `perfil`, `rol`) VALUES
+INSERT INTO `estudiante` (`Id`, `cedula`, `Nom_estudiante`, `Ape_estudiante`, `fechanacimiento`, `id_salon`, `usuario`, `password`, `email`, `perfil`, `rol`) VALUES
 (2, '5-677-788', 'Reynaldo', 'Villarreal', '30-05-2000', '4', 'rey-17', '123456', 'rey@gmail.com', 'images/estudiantes/rey.jpg', 2),
 (3, '9-566-443', 'Bolivar', 'Cortes', '10-11-1999', '1', 'bcortes', '123456', 'bolhy10@hotmail.com', 'images/estudiantes/bcortes.jpg', 2),
 (4, '1-234-443', 'Laura', 'Aripe', '12-12-2000', '1', 'alaura', '123456', 'laura@gmail.com', 'images/estudiantes/laura.jpg', 2),
@@ -106,7 +106,7 @@ CREATE TABLE `profesor` (
 --
 
 INSERT INTO `profesor` (`Id`, `Nombre`, `Apellido`, `id_curso`, `id_horarioProf`, `usuario`, `password`, `email`, `cedula`, `rol`, `perfil`) VALUES
-(1, 'Jose', 'Castrellon', '102', 0, 'cjose', '123456', 'josec@gmail.com', '6-654-543', 1, 'images/profesor/jose.jpg');
+(1, 'Jose', 'Castrellon', '102', 0, 'cjose', '123456', 'jose@gmail.com', '6-654-543', 1, 'images/profesor/jose.jpg');
 
 -- --------------------------------------------------------
 
