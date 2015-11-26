@@ -3,6 +3,7 @@ RewriteEngine on
 RewriteRule ^inicio-estudiante$ pages/estudiantes.php [L]
 RewriteRule ^inicio-profesor$ pages/profesor.php [L]
 RewriteRule ^ver-estudiantes$ pages/ver_estudiantes.php [L]
+RewriteRule ^perfil-profesor$ pages/perfil_profesor.php [L]
 
 
 RewriteRule ^edhoraPanama$ index.php [L]

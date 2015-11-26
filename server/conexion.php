@@ -20,7 +20,8 @@ if ($con -> connect_errno) {
     session_start();
 
     if(isset($_SESSION["estudiante"]) == true && isset($_SESSION["rol_e"]) == true){
-        $adm = "SELECT * FROM estudiante";
+        $usuario = $_SESSION["estudiante"];
+        $adm = "SELECT * FROM estudiante WHERE usuario = '$usuario' ";
         $aquery = $con -> query($adm);
         while($r = $aquery -> fetch_array()){
             $usuario = $r["usuario"];

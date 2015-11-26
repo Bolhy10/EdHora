@@ -24,21 +24,43 @@
                 <button type="button" class="btn btn-success" id="login">Ingresar</button>
                 <?php
                 }else{
-                    ?>
-                            <ul class="nav nav-pills">
-                                <li role="presentation" class="dropdown">
-                                    <div class="images-user"><img src="<?php echo $perfil; ?>"></div>
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="inicio" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $nombre.' '.$apellido; ?> <span class="caret"></span>
-                                    </a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Mi Perfil</a></li>
-                                        <li><a href="ver-estudiantes">Estudiantes</a></li>
-                                        <li role="separator" class="divider"></li>
-                                        <li><a href="#">Cerrar Sesi&oacute;n</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                    <?php
+                    if(isset($_SESSION["profesor"]) == true) {
+                        ?>
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="dropdown">
+                                <div class="images-user"><img src="<?php echo $perfil; ?>"></div>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="inicio" role="button"
+                                   aria-haspopup="true" aria-expanded="false"><?php echo $nombre . ' ' . $apellido; ?>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="perfil-profesor">Mi Perfil</a></li>
+                                    <li><a href="ver-estudiantes">Estudiantes</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Cerrar Sesi&oacute;n</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <?php
+                    }else{
+                        ?>
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="dropdown">
+                                <div class="images-user"><img src="<?php echo $perfil; ?>"></div>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="inicio" role="button"
+                                   aria-haspopup="true" aria-expanded="false"><?php echo $nombre . ' ' . $apellido; ?>
+                                    <span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="perfil-estudiante">Mi Perfil</a></li>
+                                    <li><a href="ver-materias">Materias</a></li>
+                                    <li role="separator" class="divider"></li>
+                                    <li><a href="#">Cerrar Sesi&oacute;n</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                <?php
+                    }
                 }
                 ?>
             </form>
