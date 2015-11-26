@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2015 a las 18:50:10
+-- Tiempo de generación: 26-11-2015 a las 20:24:56
 -- Versión del servidor: 10.0.17-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -76,7 +76,7 @@ CREATE TABLE `estudiante` (
 
 INSERT INTO `estudiante` (`Id`, `cedula`, `Nom_estudiante`, `Ape_estudiante`, `fechanacimiento`, `id_salon`, `usuario`, `password`, `email`, `perfil`, `rol`) VALUES
 (2, '5-677-788', 'Reynaldo', 'Villarreal', '30-05-2000', '4', 'rey-17', '123456', 'rey@gmail.com', 'images/estudiantes/rey.jpg', 2),
-(3, '9-566-443', 'Bolivar', 'Cortes', '10-11-1999', '1', 'bcortes', '123456', 'bolhy10@hotmail.com', 'images/estudiantes/bcortes.jpg', 2),
+(3, '9-566-431', 'Bolivar A.', 'Cortes S.', '10-11-1999', '1', 'bcortes', '123456', 'bolhy110@hotmail.com', 'images/estudiantes/bcortes.jpg', 2),
 (4, '1-234-443', 'Laura', 'Aripe', '12-12-2000', '1', 'alaura', '123456', 'laura@gmail.com', 'images/estudiantes/laura.jpg', 2),
 (5, '8-676-566', 'Carlos', 'Grajal', '12-05-1999', '4', 'cgrajal', '123', 'grajl@gmail.com', 'images/estudiantes/grajal.jpg', 2),
 (6, '8-653-334', 'Victor', 'Perea', '5-07-2000', '4', 'vperrea', '123', 'victor@gmail.com', 'images/estudiantes/victor.jpg', 2);

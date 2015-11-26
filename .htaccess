@@ -5,6 +5,8 @@ RewriteRule ^inicio-profesor$ pages/profesor.php [L]
 RewriteRule ^ver-estudiantes$ pages/ver_estudiantes.php [L]
 RewriteRule ^perfil-profesor$ pages/perfil_profesor.php [L]
 
+RewriteRule ^perfil-estudiante$ pages/perfil_estudiante.php [L]
+RewriteRule ^ver-materias$ pages/ver_materias.php [L]
 
 RewriteRule ^edhoraPanama$ index.php [L]
 </IfModule>

@@ -124,4 +124,24 @@ $(document).ready(function () {
         });
     });
 
+    $('#info-estudiante').click(function () {
+        var formData = new FormData($('#account-profesor')[0]);
+        var ruta = 'server/account_estudiante.php';
+        $.ajax({
+            type:'POST',
+            url:ruta,
+            data: formData,
+            contentType: false,
+            processData:false,
+            success: function (data) {
+                $('.error').html(data).show().delay(2000).hide(200);
+                setTimeout(function () {
+                    location.reload(true);
+                },2000);
+            }
+
+        });
+    });
+
+
 });
