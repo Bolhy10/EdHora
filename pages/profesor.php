@@ -24,6 +24,7 @@ if(isset($_SESSION['profesor']) == false && isset($_SESSION["rol_p"]) == false){
     <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,cyrillic-ext,cyrillic,latin-ext,greek,greek-ext,vietnamese' rel='stylesheet' type='text/css'>
 </head>
+<body>
 <?php
 include ("../tools/header.php");
 ?>

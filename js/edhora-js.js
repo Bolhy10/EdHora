@@ -65,4 +65,22 @@ $(document).ready(function () {
             $('.error').html('<div class="alert alert-info" role="alert">Los campos estan vacios. Intentelo Nuevamente.</div>').show().delay(2000).hide(200);
         }
     });
+
+    $('#alumnos').change(function () {
+        var salon = document.getElementById('alumnos').value;
+        $.ajax({
+            type:'POST',
+            url:'server/service.php',
+            data:{
+                salon:salon,
+                accion:'alumnos'
+            },
+            success: function (data) {
+              $('.tareitas').html(data).show();
+            }
+        })
+
+
+    });
+
 });

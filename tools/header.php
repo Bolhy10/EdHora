@@ -28,12 +28,11 @@
                             <ul class="nav nav-pills">
                                 <li role="presentation" class="dropdown">
                                     <div class="images-user"><img src="<?php echo $perfil; ?>"></div>
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $nombre.' '.$apellido; ?> <span class="caret"></span>
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="inicio" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $nombre.' '.$apellido; ?> <span class="caret"></span>
                                     </a>
                                     <ul class="dropdown-menu">
                                         <li><a href="#">Mi Perfil</a></li>
-                                        <li><a href="#">Horario</a></li>
-                                        <li><a href="#">Estudiantes</a></li>
+                                        <li><a href="ver-estudiantes">Estudiantes</a></li>
                                         <li role="separator" class="divider"></li>
                                         <li><a href="#">Cerrar Sesi&oacute;n</a></li>
                                     </ul>

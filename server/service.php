@@ -53,8 +53,34 @@ switch($_POST["accion"]){
         }else{
             echo 2;
         }
+        break;
+
+    case 'alumnos':
+
+        $salon = $_POST["salon"];
+
+        $s = "SELECT * FROM estudiante INNER JOIN salon ON (salon.ID = estudiante.id_salon) WHERE estudiante.id_salon = '$salon' ";
+        $rv = $con -> query($s);
+        while($j = $rv -> fetch_array()){
+
+            echo '<div class="tareas">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="perfil">
+                                    <img src="'.$j["perfil"].'"/>
+                                </div></div>
+                            <div class="col-lg-8">
+                                <div class="inform">
+                                    <h4>'.$j["Nom_estudiante"].' '.$j["Ape_Estudiante"].' '.$j["cedula"].'</h4>
+                                    <p>Correo electronico: '.$j["email"].'</p>
+                                    <span>Sal&oacute;n: '.$j["salon"].'</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>';
 
 
+        }
 
 
         break;
