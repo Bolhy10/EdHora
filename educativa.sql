@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-11-2015 a las 07:41:45
+-- Tiempo de generación: 26-11-2015 a las 08:54:05
 -- Versión del servidor: 10.0.17-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -58,29 +58,28 @@ INSERT INTO `cursos` (`id`, `id_curso`, `curso`) VALUES
 
 CREATE TABLE `estudiante` (
   `Id` int(100) NOT NULL,
+  `cedula` varchar(12) NOT NULL,
   `Nom_estudiante` varchar(60) NOT NULL,
   `Ape_Estudiante` varchar(60) NOT NULL,
-  `id_turno` int(11) NOT NULL,
-  `id_nivel` int(11) NOT NULL,
+  `fechanacimiento` varchar(20) NOT NULL,
+  `id_salon` varchar(10) NOT NULL,
   `usuario` varchar(60) NOT NULL,
   `password` varchar(60) NOT NULL,
   `email` varchar(60) NOT NULL,
   `perfil` varchar(100) NOT NULL,
-  `cedula` varchar(12) NOT NULL,
-  `salon` varchar(10) NOT NULL,
-  `rol` int(2) NOT NULL
+  `rol` int(3) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `estudiante`
 --
 
-INSERT INTO `estudiante` (`Id`, `Nom_estudiante`, `Ape_Estudiante`, `id_turno`, `id_nivel`, `usuario`, `password`, `email`, `perfil`, `cedula`, `salon`, `rol`) VALUES
-(2, 'Reynaldo', 'Villarreal', 1, 1, '', '', '', '', '', '', 0),
-(3, 'Bolivar', 'Cortes', 1, 1, 'bcortes', '123456', 'bolhy10@hotmail.com', 'images/estudiantes/bcortes.jpg', '9-566-443', 'A1', 2),
-(4, 'Laura', 'Aripe', 1, 1, '', '', '', '', '', '', 0),
-(5, 'Carlos', 'Grajal', 1, 1, '', '', '', '', '', '', 0),
-(6, 'Victor', 'Perea', 1, 1, '', '', '', '', '', '', 0);
+INSERT INTO `estudiante` (`Id`, `cedula`, `Nom_estudiante`, `Ape_Estudiante`, `fechanacimiento`, `id_salon`, `usuario`, `password`, `email`, `perfil`, `rol`) VALUES
+(2, '5-677-788', 'Reynaldo', 'Villarreal', '30-05-2000', '4', 'rey-17', '123456', 'rey@gmail.com', 'images/estudiantes/rey.jpg', 2),
+(3, '9-566-443', 'Bolivar', 'Cortes', '10-11-1999', '1', 'bcortes', '123456', 'bolhy10@hotmail.com', 'images/estudiantes/bcortes.jpg', 2),
+(4, '1-234-443', 'Laura', 'Aripe', '12-12-2000', '1', 'alaura', '123456', 'laura@gmail.com', 'images/estudiantes/laura.jpg', 2),
+(5, '8-676-566', 'Carlos', 'Grajal', '12-05-1999', '4', 'cgrajal', '123', 'grajl@gmail.com', 'images/estudiantes/grajal.jpg', 2),
+(6, '8-653-334', 'Victor', 'Perea', '5-07-2000', '4', 'vperrea', '123', 'victor@gmail.com', 'images/estudiantes/victor.jpg', 2);
 
 -- --------------------------------------------------------
 
